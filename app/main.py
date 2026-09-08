@@ -10,6 +10,7 @@ from app.routers.users import router as users_router
 from app.routers.projects import router as projects_router
 from app.routers.tasks import router as tasks_router
 from app.routers.tasks import task_router
+from app.routers.attachments import router as attachments_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,6 +24,7 @@ app.include_router(users_router)
 app.include_router(projects_router)
 app.include_router(tasks_router)
 app.include_router(task_router)
+app.include_router(attachments_router)
 
 @app.get("/")
 async def root():
